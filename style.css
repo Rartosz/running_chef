@@ -11,7 +11,11 @@ body
 
 #myCanvas 
 {
-    width:400px;
+    width:900px;
     height:600px;
-    border:2px solid red;
+    border:2px solid black;
+    display:block;
+    background-image:url('images/background.png');
+    background-repeat: repeat-x;
+    background-size:40%;
 }
