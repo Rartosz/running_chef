@@ -53,10 +53,18 @@ body
     border:none;
     background-color:transparent;
     margin-right:10px;
-    background-image:url('https://static.thenounproject.com/png/1507878-200.png');
+    background-image:url('https://lh3.googleusercontent.com/proxy/Xl3osUH56uEtxhozmlZdyrjbde9-N54-6H9MgTwOjLg7zY4dz8yV5UCa59lsVA7iy0xf6aAQR7kPatJ2aVT6m0u6qRvXOavY');
     background-size:100%;
     background-position: center;
     background-repeat: no-repeat;
+    transition: opacity 0.4s;
+}
+
+.settings-button:hover 
+{
+    cursor: pointer;
+    opacity:0.5;
+    transition:0.4s;
 }
 
 .logo 
@@ -110,7 +118,7 @@ body
     position: relative;
     border:none;
     background-color:transparent;
-    background-image:url('https://sosafecm3.files.wordpress.com/2014/05/vid-button-stats.png');
+    background-image:url('https://lh3.googleusercontent.com/proxy/8OMHEU3Fn4DyEoc9heBBHXcikSn10bZKwBJ2fuuBjP6__nHggHvFpTgxTd2P6B_6aA5_ebzX8GNBHoA73VLyK5wo31BzehbS');
     background-size:100%;
     background-repeat: no-repeat;
     background-position: center;
@@ -121,6 +129,7 @@ body
 {
     opacity:0.5;
     transition:0.4s;
+    cursor: pointer;
 }
 
 .start-button 
@@ -130,7 +139,7 @@ body
     position: relative;
     border:none;
     background-color:transparent;
-    background-image:url('https://lh3.googleusercontent.com/proxy/ncgSiKlLj4GPpk0icymRK6F7JdBu_8hXq9szfCz2TY_LrZztgn-eZ-fSqTbDN9tmfBY0EDHTlBf1m7UZfFL2XXGjRH51Kp5c');
+    background-image:url('https://cdn.imgbin.com/15/17/10/imgbin-push-button-pixel-art-button-GuBHf9xdAr8hD3x9ZSBykUiaP.jpg');
     background-size:79%;
     background-repeat: no-repeat;
     background-position: center;
@@ -150,7 +159,7 @@ body
     border:none;
     transition:opacity 0.4s;
     background-color:transparent;
-    background-image:url('https://images.vexels.com/media/users/3/147101/isolated/preview/b4a49d4b864c74bb73de63f080ad7930-instagram-profile-button-by-vexels.png');
+    background-image:url('https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/6ab41162733715.5a99940063fdc.png');
     background-size:contain;
     background-repeat: no-repeat;
     background-position: center;
@@ -160,6 +169,7 @@ body
 {
     opacity:0.5;
     transition:0.4s;
+    cursor: pointer;
 }
 
 
@@ -201,10 +211,19 @@ body
     position: relative;
     background-color:transparent;
     background-image:url('images/floor_block.svg');
-    background-position: left;
+    background-position: 0%;
     background-repeat:repeat-x;
     background-size:100px 100px;
     border:none;
+    animation:floorMoving 500s linear infinite;
+}
+
+@keyframes floorMoving 
+{
+    0%{background-position:90000%;}
+    100%{background-position:0%;}
+    
+
 }
 
 
@@ -274,6 +293,14 @@ body
 .hamburger
 {
     background-image:url('images/hamburger.svg');
+}
+.tomato
+{
+    background-image:url('images/tomato.png');
+}
+.banana 
+{
+    background-image:url('images/banana.png');
 }
 
 .foodSlide 
