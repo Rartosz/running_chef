@@ -3,7 +3,7 @@ let startBtn = document.querySelector(".start-button");
 let scenery = document.querySelector(".scenery");
 
 
-let foodArray = ['hamburger', 'fries'];
+
 
 let jump = function() 
 {
@@ -17,34 +17,25 @@ let jump = function()
             player.classList.remove("fall");
             scenery.addEventListener("click", jump);
         },500);
-    },400);
+    },500);
 }
 
+scenery.addEventListener("click", jump);
 
 
-// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! AFTER START EVENT FUNCTIONS !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+
+
+
+
 
 startBtn.addEventListener("click", function()
 {
-// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! MENU STYLE FUNCTIONS ETC !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
     let mainMenu= document.querySelector(".start-menu");
     mainMenu.style.display = "none";
 
-// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! SCORE FUNCTIONS !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-    let score = document.querySelector(".score");
-    let points = 0;
-    score.textContent = points;
-
-    let addScore = setInterval(function()
-    {
-        points++;
-        score.textContent = points;
-
-    },1000);
-
-// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! SPAWN FOOD FUNCTIONS !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
+    
 
    let spawnFood = setInterval(function()
     {
@@ -52,16 +43,6 @@ startBtn.addEventListener("click", function()
             scenery.appendChild(food);
             food.classList.add("food");
             food.classList.add("foodSlide");
-
-           
-                
-                let i = Math.floor(Math.random()*2);
-
-                food.classList.add(foodArray[i]);
-            
-            
-
-           
 
             let checkDead = setInterval(function()
             {
@@ -71,24 +52,22 @@ startBtn.addEventListener("click", function()
                 if(foodLeft<54 && foodLeft>=10&& chefBottom<=134){
                     clearInterval(spawnFood);
                     clearInterval(checkDead);
-                    clearInterval(addScore);
                     mainMenu.style.display = "flex";
                 }
                
                 
-            },10);
+            },10) 
 
             setTimeout(function()
             {
                 food.remove();
                 clearInterval(checkDead);
-            },1800);
+            },1990);
             
-     },1500);
+     },2000);
         
     
 });
 
 
 
-scenery.addEventListener("click", jump);
