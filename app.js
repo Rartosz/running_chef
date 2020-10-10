@@ -16,8 +16,8 @@ let jump = function()
         setTimeout(function(){
             player.classList.remove("fall");
             scenery.addEventListener("click", jump);
-        },500);
-    },400);
+        },300);
+    },300);
 }
 
 
@@ -75,7 +75,7 @@ startBtn.addEventListener("click", function()
                     // clearInterval(addScore);
                     mainMenu.style.display = "flex";
                 }
-                else if(foodLeft<54 && foodLeft>=10 && i>=2 && chefBottom<=134){
+                if(foodLeft<54 && foodLeft>=10 && i>=2 && chefBottom<=134){
                    
                     points++;
                     score.textContent=points;

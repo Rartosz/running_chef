@@ -241,18 +241,19 @@ body
     margin-left:10px;
     position:absolute;
     bottom:100px;
+  
     
 }
 
 .jump 
 {
-    animation: jump 0.4s ease-out;
+    animation: jump 0.3s ease-out;
     animation-iteration-count: 1;
 }
 
 .fall 
 {
-    animation: fall 0.5s ease-in;
+    animation: fall 0.3s ease-in;
     animation-iteration-count: 1;
 }
 
@@ -281,7 +282,7 @@ body
     left:120vw;
     position:absolute;
     bottom:100px;
-    
+   
     
 }
 
