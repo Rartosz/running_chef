@@ -85,7 +85,8 @@ startBtn.addEventListener("click", function()
                     dead_container.style.display = "flex";
 
                     let timer = document.querySelector(".timer");
-                    let i=4;
+                    timer.className = "timer";
+                    let i=5;
                    let time =  setInterval(function()
                     {
                         if(i==0)
@@ -94,6 +95,7 @@ startBtn.addEventListener("click", function()
 
                         }
                         else{
+                            
                             timer.classList.add(`timer${i}`);
                         i--
                         }
