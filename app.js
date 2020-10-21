@@ -1,3 +1,9 @@
+window.onload = function()
+{
+
+
+
+
 let player = document.querySelector(".player");
 let startBtn = document.querySelector(".start-button");
 let scenery = document.querySelector(".scenery");
@@ -126,3 +132,6 @@ cancel_btn.addEventListener("click", function()
     score_container.style.display ="none";
     mainMenu.style.display = "flex";
 });
+
+
+}
