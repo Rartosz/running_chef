@@ -77,6 +77,22 @@ startBtn.addEventListener("click", function()
                     clearInterval(checkDead);
                     // clearInterval(addScore);
                     dead_container.style.display = "flex";
+
+                    let timer = document.querySelector(".timer");
+                    let i=4;
+                   let time =  setInterval(function()
+                    {
+                        if(i==0)
+                        {   
+                            clearInterval(time);
+
+                        }
+                        else{
+                            timer.classList.add(`timer${i}`);
+                        i--
+                        }
+                        
+                    },1000);
                     
                     
                 }

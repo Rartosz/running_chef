@@ -55,6 +55,12 @@ body
 
 }
 
+.start-button:hover 
+{
+    opacity:0.6;
+    cursor: pointer;
+}
+
 .skin-button 
 {
     width:200px;
@@ -66,6 +72,12 @@ body
     background-position: center;
     background-repeat: no-repeat;
 
+}
+
+.skin-button:hover 
+{
+    opacity:0.6;
+    cursor: pointer;
 }
 
 .shop-button 
@@ -81,6 +93,11 @@ body
 
 }
 
+.shop-button:hover 
+{
+    opacity:0.6;
+    cursor: pointer;
+}
 
 .scenery 
 {
@@ -284,19 +301,19 @@ body
     background-repeat: no-repeat;
 }
 
-.timer-4 
+.timer4 
 {
     background-image:url("images/4.png");
 }
-.timer-3 
+.timer3 
 {
     background-image:url("images/3.png");
 }
-.timer-2 
+.timer2 
 {
     background-image:url("images/2.png");
 }
-.timer-1 
+.timer1 
 {
     background-image:url("images/1.png");
 }
