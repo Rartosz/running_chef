@@ -24,7 +24,6 @@ body
     width:100vw;
     height:100vh;
     display:flex;
-    /* display:none; */
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
@@ -32,146 +31,55 @@ body
     z-index:1;
 }
 
-.settings-button-container
-{
-    margin-top:5px;
-    width:100vw;
-    height:40px;
-    background-color:transparent;
-    border:none;
-    position:relative;
-    display:flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-end;
-}
-
-.settings-button 
-{
-    width:40px;
-    height:40px;
-    border:none;
-    background-color:transparent;
-    margin-right:10px;
-    background-image:url('https://lh3.googleusercontent.com/proxy/Xl3osUH56uEtxhozmlZdyrjbde9-N54-6H9MgTwOjLg7zY4dz8yV5UCa59lsVA7iy0xf6aAQR7kPatJ2aVT6m0u6qRvXOavY');
-    background-size:100%;
-    background-position: center;
-    background-repeat: no-repeat;
-    transition: opacity 0.4s;
-}
-
-.settings-button:hover 
-{
-    cursor: pointer;
-    opacity:0.5;
-    transition:0.4s;
-}
-
 .logo 
 {
-    width:70vw;
-    height:100px;
-    min-height: 100px;
-    background-image:url('https://lh3.googleusercontent.com/proxy/y9Ue5a7id17jn_ws5NHs-ztUMwg4Yf0V03p6vGl8C8f066pNmICsENF9jbstUT3of8mLo2iRzO036Od_G01-jvM_V0wvH_GF');
-    background-size:contain;
+    width:310px;
+    height:150px;
+    background-image: url("images/chefrun_logo.png");
     background-position: center;
+    background-size:cover;
     background-repeat: no-repeat;
-    margin-top:30px;
-    position: relative;
-}
-
-.del-ads 
-{
-    width:60vw;
-    height:70px;
-    min-height: 70px;
-    background-color:rgba(209, 2, 2, 0.842);
-    color:white;
-    border:none;
-    border-radius:20px;
-    position: relative;
-    font-size:15px;
-    font-family: 'Press Start 2P', cursive;
-    margin-top:40px;
-}
-
-.menu-buttons-container 
-{
-    
-    width:100vw;
-    height:50px;
-    background-color:transparent;
-    border:none;
-    position: absolute;
-    display:flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    bottom:0px;
-    margin-bottom:20px;
-}
-
-.stats-button 
-{
-    width:20vw;
-    height:50px;
-    position: relative;
-    border:none;
-    background-color:transparent;
-    background-image:url('https://lh3.googleusercontent.com/proxy/8OMHEU3Fn4DyEoc9heBBHXcikSn10bZKwBJ2fuuBjP6__nHggHvFpTgxTd2P6B_6aA5_ebzX8GNBHoA73VLyK5wo31BzehbS');
-    background-size:100%;
-    background-repeat: no-repeat;
-    background-position: center;
-    transition:opacity 0.4s;
-}
-
-.stats-button:hover 
-{
-    opacity:0.5;
-    transition:0.4s;
-    cursor: pointer;
+    margin-top:10px;
 }
 
 .start-button 
 {
-    width:60vw;
-    height:50px;
-    position: relative;
+    width:200px;
+    height:120px;
     border:none;
     background-color:transparent;
-    background-image:url('https://cdn.imgbin.com/15/17/10/imgbin-push-button-pixel-art-button-GuBHf9xdAr8hD3x9ZSBykUiaP.jpg');
-    background-size:79%;
-    background-repeat: no-repeat;
+    background-image:url("images/play.png");
+    background-size:100%;
     background-position: center;
-    transition:opacity 0.4s;
-}
-.start-button:hover 
-{
-    opacity:0.5;
-    transition:0.4s;
-    cursor: pointer;
-}
-.profile-button 
-{
-    width:20vw;
-    height:50px;
-    position: relative;
-    border:none;
-    transition:opacity 0.4s;
-    background-color:transparent;
-    background-image:url('https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/6ab41162733715.5a99940063fdc.png');
-    background-size:contain;
     background-repeat: no-repeat;
-    background-position: center;
-    transition:opacity 0.4s;
-}
-.profile-button:hover 
-{
-    opacity:0.5;
-    transition:0.4s;
-    cursor: pointer;
+
 }
 
+.skin-button 
+{
+    width:200px;
+    height:100px;
+    border:none;
+    background-color:transparent;
+    background-image:url("images/skin.png");
+    background-size:100%;
+    background-position: center;
+    background-repeat: no-repeat;
+
+}
+
+.shop-button 
+{
+    width:200px;
+    height:100px;
+    border:none;
+    background-color:transparent;
+    background-image:url("images/shop.png");
+    background-size:100%;
+    background-position: center;
+    background-repeat: no-repeat;
+
+}
 
 
 .scenery 
@@ -191,16 +99,17 @@ body
 {
     position:absolute;
     color:white;
-    display:flex;
+    display:none;
     flex-direction:column;
     align-items: center;
     justify-content: center;
     width:100%;
     height:fit-content;
-    top:15%;
+    top:5%;
     font-size:1rem;
     font-family: 'Press Start 2P', cursive;
     letter-spacing: 5px;
+
 }
 
 .floor 
@@ -303,6 +212,14 @@ body
 {
     background-image:url('images/banana.png');
 }
+.broccoli
+{
+    background-image:url('images/broccoli.svg');
+}
+.avocado
+{
+    background-image:url('images/avocado.svg');
+}
 
 .foodSlide 
 {
@@ -313,4 +230,122 @@ body
 {
     0%{left:120vw;}
     100%{left:-120vw; display:none;}
+}
+
+
+.dead-container 
+{
+    position:absolute;
+    width:100%;
+    height:100%;
+    z-index:3;
+    display:none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.timer-container 
+{
+    width:300px;
+    height:200px;
+    background-image:url("images/bg.png");
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin:0;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.reviveq 
+{
+    width:70%;
+    height:80px;
+    border:none;
+    background-color: transparent;
+    background-image:url("images/revive.png");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.timer 
+{
+    width:80px;
+    height:80px;
+    border:none;
+    background-color: transparent;
+    background-image:url("images/5.png");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.timer-4 
+{
+    background-image:url("images/4.png");
+}
+.timer-3 
+{
+    background-image:url("images/3.png");
+}
+.timer-2 
+{
+    background-image:url("images/2.png");
+}
+.timer-1 
+{
+    background-image:url("images/1.png");
+}
+
+.ad-container
+{
+    width:100%;
+    height:100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin:10px 0px;
+}
+
+.advert 
+{
+    width:170px;
+    height:80px;
+    margin-right:8px;
+    border:none;
+    background-color: transparent;
+    background-image:url("images/adxxx.png");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+}
+
+.advert:hover 
+{
+    opacity:0.5;
+    cursor: pointer;
+}
+
+.cancel 
+{
+    width:80px;
+    height:80px;
+    margin-left:8px;
+    border:none;
+    background-color: transparent;
+    background-image:url("images/exit.png");
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.cancel:hover 
+{
+    opacity:0.5;
+    cursor: pointer;
 }
