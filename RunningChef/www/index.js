@@ -1,9 +1,16 @@
+window.onload = function()
+{
+
+
+
+
 let player = document.querySelector(".player");
 let startBtn = document.querySelector(".start-button");
 let scenery = document.querySelector(".scenery");
-
-
-let foodArray = ['hamburger', 'fries', 'tomato', 'banana'];
+let score_container = document.querySelector(".score_container");
+let dead_container = document.querySelector(".dead-container");
+let foodArray = ['hamburger', 'fries', 'tomato', 'banana', 'avocado', 'broccoli'];
+let cancel_btn = document.querySelector(".cancel");
 
 let jump = function() 
 {
@@ -16,8 +23,8 @@ let jump = function()
         setTimeout(function(){
             player.classList.remove("fall");
             scenery.addEventListener("click", jump);
-        },500);
-    },400);
+        },300);
+    },300);
 }
 
 
@@ -31,7 +38,8 @@ startBtn.addEventListener("click", function()
     mainMenu.style.display = "none";
 
 // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! SCORE FUNCTIONS !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
+    
+    score_container.style.display = "flex";
     let score = document.querySelector(".score");
     let points = 0;
     score.textContent = points;
@@ -55,7 +63,7 @@ startBtn.addEventListener("click", function()
 
            
                 
-                let i = Math.floor(Math.random()*4);
+                let i = Math.floor(Math.random()*6);
 
                 food.classList.add(foodArray[i]);
             
@@ -71,18 +79,39 @@ startBtn.addEventListener("click", function()
                 if(foodLeft<54 && foodLeft>=10 && i<2  && chefBottom<=134){
                    
                     clearInterval(spawnFood);
+                    
                     clearInterval(checkDead);
                     // clearInterval(addScore);
-                    mainMenu.style.display = "flex";
+                    dead_container.style.display = "flex";
+
+                    let timer = document.querySelector(".timer");
+                    timer.className = "timer";
+                    let i=5;
+                   let time =  setInterval(function()
+                    {
+                        if(i==0)
+                        {   
+                            clearInterval(time);
+
+                        }
+                        else{
+                            
+                            timer.classList.add(`timer${i}`);
+                        i--
+                        }
+                        
+                    },1000);
+                    
+                    
                 }
-                else if(foodLeft<54 && foodLeft>=10 && i>=2 && chefBottom<=134){
+                if(foodLeft<54 && foodLeft>=10 && i>=2 && chefBottom<=134){
                    
                     points++;
                     score.textContent=points;
                 }
                 
 
-            },100);
+            },90);
 
             setTimeout(function()
             {
@@ -98,3 +127,13 @@ startBtn.addEventListener("click", function()
 
 
 scenery.addEventListener("click", jump);
+cancel_btn.addEventListener("click", function() 
+{
+    dead_container.style.display = "none";
+    let mainMenu= document.querySelector(".start-menu");
+    score_container.style.display ="none";
+    mainMenu.style.display = "flex";
+});
+
+
+}
