@@ -17,6 +17,7 @@ body
     justify-content: center;
     position:relative;
     overflow-x: hidden;
+    z-index:-1;
 }
 
 .start-menu 
@@ -366,4 +367,35 @@ body
 {
     opacity:0.5;
     cursor: pointer;
+}
+
+
+#advert-container
+{
+  width:100vw;
+  height:100vh;
+  background:black;
+  position: absolute;
+  z-index:10;
+  display:none;
+    
+}
+
+.ad-time 
+{
+    width:30px;
+    height:30px;
+    font-size:15px;
+    border-radius:100%;
+    border:2px solid white;
+    color:white;
+    text-align: center;
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    position:absolute;
+    top:5px;
+    right:5px;
+
 }

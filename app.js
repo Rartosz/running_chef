@@ -2,7 +2,7 @@ window.onload = function()
 {
 
 
-
+let points;
 
 let player = document.querySelector(".player");
 let startBtn = document.querySelector(".start-button");
@@ -11,6 +11,8 @@ let score_container = document.querySelector(".score_container");
 let dead_container = document.querySelector(".dead-container");
 let foodArray = ['hamburger', 'fries', 'tomato', 'banana', 'avocado', 'broccoli'];
 let cancel_btn = document.querySelector(".cancel");
+let ad_btn = document.querySelector(".advert");
+let ad_container = document.querySelector("#advert-container");
 
 let jump = function() 
 {
@@ -41,7 +43,7 @@ startBtn.addEventListener("click", function()
     
     score_container.style.display = "flex";
     let score = document.querySelector(".score");
-    let points = 0;
+    points = 0;
     score.textContent = points;
 
     // let addScore = setInterval(function()
@@ -126,7 +128,94 @@ startBtn.addEventListener("click", function()
 
 
 
+
+let watch_ad = function() 
+{
+    dead_container.style.display = "none";
+   ad_container.style.display = "flex";
+
+   let adTimer = document.querySelector(".ad-time");
+   let time = 3;
+
+   adTimer.innerHTML = time;
+
+   let countAd = setInterval(function()
+   {
+
+    if(time==0)
+    {
+        ad_container.style.display="none";
+        // let mainMenu= document.querySelector(".start-menu");
+        // mainMenu.style.display = "flex";
+        let spawnFood = setInterval(function()
+    {
+            let food = document.createElement("div");
+            scenery.appendChild(food);
+            food.classList.add("food");
+            food.classList.add("foodSlide");
+
+           
+                
+                let i = Math.floor(Math.random()*6);
+
+                food.classList.add(foodArray[i]);
+            
+            
+
+                
+
+            let checkDead = setInterval(function()
+            {
+                let score = document.querySelector(".score");
+                let chefBottom = parseInt(window.getComputedStyle(player).getPropertyValue("bottom"));
+                let foodLeft = parseInt(window.getComputedStyle(food).getPropertyValue("left"));
+                
+                if(foodLeft<54 && foodLeft>=10 && i<2  && chefBottom<=134){
+                   
+                    clearInterval(spawnFood);
+                    
+                    clearInterval(checkDead);
+                    // clearInterval(addScore);
+                    dead_container.style.display = "flex";
+
+                    
+                    
+                }
+                if(foodLeft<54 && foodLeft>=10 && i>=2 && chefBottom<=134){
+                   
+                    points++;
+                    score.textContent=points;
+                }
+                
+
+            },90);
+
+            setTimeout(function()
+            {
+                food.remove();
+                clearInterval(checkDead);
+            },1800);
+            
+     },1500);
+        clearInterval(countAd);
+    }
+
+    else 
+    {
+        adTimer.innerHTML = time;
+        time--;
+    }
+    
+
+   },1000);
+}
+
+
+
+
+
 scenery.addEventListener("click", jump);
+
 cancel_btn.addEventListener("click", function() 
 {
     dead_container.style.display = "none";
@@ -134,6 +223,8 @@ cancel_btn.addEventListener("click", function()
     score_container.style.display ="none";
     mainMenu.style.display = "flex";
 });
+
+ad_btn.addEventListener("click", watch_ad);
 
 
 }
