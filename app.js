@@ -14,6 +14,9 @@ let cancel_btn = document.querySelector(".cancel");
 let ad_btn = document.querySelector(".advert");
 let ad_container = document.querySelector("#advert-container");
 
+let reviveTimes;
+
+
 let jump = function() 
 {
     scenery.removeEventListener("click", jump);
@@ -30,28 +33,20 @@ let jump = function()
 }
 
 
-
 // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! AFTER START EVENT FUNCTIONS !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 startBtn.addEventListener("click", function()
 {
-// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! MENU STYLE FUNCTIONS ETC !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    reviveTimes=0;
     let mainMenu= document.querySelector(".start-menu");
     mainMenu.style.display = "none";
 
-// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! SCORE FUNCTIONS !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
     
     score_container.style.display = "flex";
     let score = document.querySelector(".score");
     points = 0;
     score.textContent = points;
-
-    // let addScore = setInterval(function()
-    // {
-    //     points++;
-    //     score.textContent = points;
-
-    // },10000);
 
 // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! SPAWN FOOD FUNCTIONS !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
@@ -78,13 +73,15 @@ startBtn.addEventListener("click", function()
                 let chefBottom = parseInt(window.getComputedStyle(player).getPropertyValue("bottom"));
                 let foodLeft = parseInt(window.getComputedStyle(food).getPropertyValue("left"));
                 
+                
                 if(foodLeft<54 && foodLeft>=10 && i<2  && chefBottom<=134){
                    
                     clearInterval(spawnFood);
                     
                     clearInterval(checkDead);
-                    // clearInterval(addScore);
                     dead_container.style.display = "flex";
+
+                    
 
                     let timer = document.querySelector(".timer");
                     timer.className = "timer";
@@ -94,6 +91,11 @@ startBtn.addEventListener("click", function()
                         if(i==0)
                         {   
                             clearInterval(time);
+                            if(reviveTimes===0)
+                            {
+                                cancel_btn.click();
+                            }
+                            
 
                         }
                         else{
@@ -131,6 +133,7 @@ startBtn.addEventListener("click", function()
 
 let watch_ad = function() 
 {
+    reviveTimes=1;
     dead_container.style.display = "none";
    ad_container.style.display = "flex";
 
@@ -145,8 +148,6 @@ let watch_ad = function()
     if(time==0)
     {
         ad_container.style.display="none";
-        // let mainMenu= document.querySelector(".start-menu");
-        // mainMenu.style.display = "flex";
         let spawnFood = setInterval(function()
     {
             let food = document.createElement("div");
@@ -175,7 +176,6 @@ let watch_ad = function()
                     clearInterval(spawnFood);
                     
                     clearInterval(checkDead);
-                    // clearInterval(addScore);
                     dead_container.style.display = "flex";
 
                     
@@ -224,7 +224,21 @@ cancel_btn.addEventListener("click", function()
     mainMenu.style.display = "flex";
 });
 
-ad_btn.addEventListener("click", watch_ad);
+ad_btn.addEventListener("click", function()
+{
+    if(reviveTimes===1)
+    {
+        dead_container.style.display = "none";
+        let mainMenu= document.querySelector(".start-menu");
+        score_container.style.display ="none";
+        mainMenu.style.display = "flex";
+    }
+
+    else 
+    {
+        watch_ad();
+    }
+});
 
 
 }
