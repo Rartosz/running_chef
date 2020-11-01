@@ -1,7 +1,5 @@
 window.onload = function()
 {
-
-
 let points;
 
 let player = document.querySelector(".player");
@@ -14,7 +12,10 @@ let cancel_btn = document.querySelector(".cancel");
 let ad_btn = document.querySelector(".advert");
 let ad_container = document.querySelector("#advert-container");
 
+let ifCancel;
 let reviveTimes;
+
+
 
 
 let jump = function() 
@@ -38,10 +39,12 @@ let jump = function()
 startBtn.addEventListener("click", function()
 {
     reviveTimes=0;
+    
+
     let mainMenu= document.querySelector(".start-menu");
     mainMenu.style.display = "none";
 
-
+    
     
     score_container.style.display = "flex";
     let score = document.querySelector(".score");
@@ -81,7 +84,7 @@ startBtn.addEventListener("click", function()
                     clearInterval(checkDead);
                     dead_container.style.display = "flex";
 
-                    
+                    ifCancel=0;
 
                     let timer = document.querySelector(".timer");
                     timer.className = "timer";
@@ -91,10 +94,11 @@ startBtn.addEventListener("click", function()
                         if(i==0)
                         {   
                             clearInterval(time);
-                            if(reviveTimes===0)
+                            if(reviveTimes===0 && ifCancel===0)
                             {
-                                cancel_btn.click();
+                                    cancel_btn.click();
                             }
+
                             
 
                         }
@@ -102,6 +106,7 @@ startBtn.addEventListener("click", function()
                             
                             timer.classList.add(`timer${i}`);
                         i--
+        
                         }
                         
                     },1000);
@@ -218,10 +223,13 @@ scenery.addEventListener("click", jump);
 
 cancel_btn.addEventListener("click", function() 
 {
+    
+    ifCancel=1;
     dead_container.style.display = "none";
     let mainMenu= document.querySelector(".start-menu");
     score_container.style.display ="none";
     mainMenu.style.display = "flex";
+    
 });
 
 ad_btn.addEventListener("click", function()
